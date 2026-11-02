@@ -1,0 +1,20 @@
+CREATE TABLE utilisateurs ( nom VARCHAR(100) NOT NULL,prenom VARCHAR(100)NOT NULL,age INT NOT NULL,date_de_naissance DATE NOT NULL,adresse VARCHAR(250) NOT NULL ,email VARCHAR(100) NOT NULL);
+CREATE TABLE tvs ( nom VARCHAR(150) NOT NULL,marque VARCHAR(50) NOT NULL,taille INT NOT NULL);
+CREATE TABLE smartphones ( nom VARCHAR(150) NOT NULL,marque VARCHAR(50) NOT NULL,couleur VARCHAR(100) NOT NULL);
+
+ALTER TABLE smartphones
+CHANGE couleur date_de_sortie DATE NOT NULL;
+
+ALTER TABLE utilisateurs
+ADD id_utilisateurs INT AUTO_INCREMENT PRIMARY KEY FIRST;
+ALTER TABLE smartphones
+ADD id_smartphones INT AUTO_INCREMENT PRIMARY KEY FIRST;
+ALTER TABLE tvs
+ADD id_tvs INT AUTO_INCREMENT PRIMARY KEY FIRST;
+
+
+INSERT INTO utilisateurs (nom, prenom, age, date_de_naissance, adresse, email) VALUES ('Muhamed', 'Selmani', 24, '2002-03-21', 'Bruxelles', 'muhamed@example.com'), ('Anne', 'Sophie', 30, '1996-03-18', 'Bruxelles', 'sophie@example.com'), ('Bernard', 'Arnauld', 22, '2004-02-10', 'Bruxelles', 'thomas@example.com');
+
+INSERT INTO tvs (nom, marque, taille) VALUES ('LG 4K', 'LG', 55), ('SAMSUNG 8K', 'Samsung', 65), ('SONY 2K', 'Sony', 55);
+
+INSERT INTO smartphones (nom, marque, date_de_sortie) VALUES ('iPhone 15', 'Apple', '2023-09-22'), ('Galaxy S24', 'Samsung', '2024-01-31'), ('Pixel 8', 'Google', '2023-10-12');
